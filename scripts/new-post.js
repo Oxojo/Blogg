@@ -8,32 +8,31 @@ function getPostFullPath(fileName) {
 }
 
 const fileName = await input({
-  message: '请输入文件名称',
+  message: 'Enter the file name',
   validate: (value) => {
     if (!isFileNameSafe(value)) {
-      return '文件名只能包含字母、数字和连字符'
+      return 'Invalid Name : You can use Letters, Numbers, and Hyphens.'
     }
     const fullPath = getPostFullPath(value)
     if (fs.existsSync(fullPath)) {
-      return `${fullPath} 已存在`
+      return `${fullPath} Already exists.`
     }
     return true
   },
 })
 
 const title = await input({
-  message: '请输入文章标题',
+  message: 'Enter the title.',
 })
 
 const content = `---
 title: ${title}
 date: ${new Date().toISOString()}
 tags: []
-comments: true
 draft: false
 ---
 `
 
 const fullPath = getPostFullPath(fileName)
 fs.writeFileSync(fullPath, content)
-console.log(`${fullPath} 创建成功`)
+console.log(`${fullPath} Comfirmed`)

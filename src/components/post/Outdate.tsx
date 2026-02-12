@@ -22,8 +22,10 @@ export function Outdate({ lastMod }: { lastMod: Date }) {
           exit={{ opacity: 0 }}
         >
           <span>
-            这篇文章最后修改于 {getFormattedDate(lastMod)}
-            ，部分内容可能已经不适用，如有疑问可联系作者。
+            This article lastly updated {getFormattedDate(lastMod)}, so some information may be older. 
+            
+            If you notice some problems, let me know.
+            
           </span>
         </motion.div>
       )}
