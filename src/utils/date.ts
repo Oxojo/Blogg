@@ -22,7 +22,6 @@ export function getRelativeTime(startDate: Date, endDate = new Date()) {
   return null
 }
 
-// 获取一个格式化的日期，格式为：2024 年 1 月 1 日 星期一
 export function getFormattedDate(date: Date) {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -34,12 +33,10 @@ export function getFormattedDate(date: Date) {
   return `${year}-${month}-${day}, ${week}`
 }
 
-// 数字前补 0
 function padZero(number: number, len = 2) {
   return number.toString().padStart(len, '0')
 }
 
-// 获取格式化后的日期时间，格式：2024 年 01 月 01 日 12:00
 export function getFormattedDateTime(date: Date) {
   const year = date.getFullYear()
   const month = padZero(date.getMonth() + 1)
