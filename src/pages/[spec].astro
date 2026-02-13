@@ -30,7 +30,7 @@ const { md } = Astro.props
 
 const { headings, Content } = await md.render()
 
-const isPageLayout = ['friends', 'projects'].includes(md.slug)
+const isPageLayout = ['projects'].includes(md.slug)
 const isMdContentEmpty = md.body.trim().length === 0
 ---
 

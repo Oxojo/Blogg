@@ -1,4 +1,4 @@
-// 获取两个日期的相对时间
+// Get relative time between two dates
 export function getRelativeTime(startDate: Date, endDate = new Date()) {
   const diffSeconds = Math.floor((endDate.getTime() - startDate.getTime()) / 1000)
   if (diffSeconds < 0) {
@@ -47,12 +47,12 @@ export function getFormattedDateTime(date: Date) {
   return `${year}-${month}-${day}, ${hours}:${minutes}`
 }
 
-// 获取两个日期的相差的天数
+// Get the number of days between two dates
 export function getDiffInDays(startDate: Date, endDate = new Date()) {
   return Math.floor((endDate.getTime() - startDate.getTime()) / (1000 * 86400))
 }
 
-// 获取一个短的日期，格式为：04-20
+// Get a short date in the format: 04-20
 export function getShortDate(date: Date) {
   const month = padZero(date.getMonth() + 1)
   const day = padZero(date.getDate())
@@ -60,7 +60,7 @@ export function getShortDate(date: Date) {
   return `${month}-${day}`
 }
 
-// 获取日期所在的年一共多少天
+// Get the total number of days in the year of the date
 export function getDaysInYear(date: Date) {
   const year = date.getFullYear()
   if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
@@ -69,13 +69,13 @@ export function getDaysInYear(date: Date) {
   return 365
 }
 
-// 获取日期所在的年的开始日期
+// Get the start date of the year of the date
 export function getStartOfYear(date: Date) {
   const year = date.getFullYear()
   return new Date(year, 0, 1)
 }
 
-// 获取日期所在的天的开始日期
+// Get the start date of the day of the date
 export function getStartOfDay(date: Date) {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate())
 }
