@@ -2,9 +2,10 @@
   import chroma from 'chroma-js'
   import { color as themeColor } from '@/config.json'
 
-  function pickRandomAccent() {
-    const seed = (Math.random() * themeColor.accent.length) | 0
-    return themeColor.accent[seed]
+  // choose a stable accent color instead of picking randomly
+  // use the first entry defined in the config by default
+  function pickAccent() {
+    return themeColor.accent[0]
   }
 
   function getRgbVal(color: chroma.Color) {
@@ -12,7 +13,7 @@
   }
 
   function injectColor() {
-    const accentColor = pickRandomAccent()
+    const accentColor = pickAccent()
 
     const rootBgColor = {
       light: chroma.mix('rgb(250,250,250)', accentColor.light, 0.05, 'rgb'),
