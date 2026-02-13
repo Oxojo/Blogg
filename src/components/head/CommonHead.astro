@@ -38,7 +38,6 @@ const titleWithSiteSuffix = title === site.title ? title : `${title} - ${site.ti
 {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
 
 <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-<link rel="sitemap" href="/sitemap-index.xml" />
 <link
   rel="alternate"
   type="application/rss+xml"
