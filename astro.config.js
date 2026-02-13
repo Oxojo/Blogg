@@ -28,6 +28,8 @@ export default defineConfig({
       animationClass: 'swup-transition-',
       containers: ['main'],
       morph: ['[component-export="Provider"]'],
+      // disable scrolling animation so new pages appear instantly at top
+      smoothScrolling: false,
     }),
   ],
   markdown: {
