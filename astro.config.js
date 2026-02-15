@@ -19,7 +19,7 @@ import swup from '@swup/astro'
 
 // https://astro.build/config
 export default defineConfig({
-  site: site.url,
+  site: 'https://www.oxojo.dev',
   integrations: [
     tailwind(),
     react(),

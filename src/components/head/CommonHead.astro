@@ -7,7 +7,9 @@ interface Props {
   image?: string
 }
 
-const { title = site.title, description = site.description, image } = Astro.props
+const { title = site.title, description = site.description, image = '/default-og-image.png' } = Astro.props
+
+const ogImageUrl = new URL(image, Astro.site);
 
 const titleWithSiteSuffix = title === site.title ? title : `${title} - ${site.title}`
 ---
@@ -29,13 +31,13 @@ const titleWithSiteSuffix = title === site.title ? title : `${title} - ${site.ti
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-{image && <meta property="og:image" content={new URL(image, Astro.url)} />}
+<meta property="og:image" content={ogImageUrl} />
 
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 {author.twitterId && <meta property="twitter:site" content={author.twitterId} />}
-{image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
+<meta property="twitter:image" content={ogImageUrl} />
 
 <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 <link
