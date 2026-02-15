@@ -57,11 +57,6 @@
       "icon": "icon-archive"
     },
     {
-      "name": "Projects",
-      "link": "/projects",
-      "icon": "icon-flask"
-    },
-    {
       "name": "About",
       "link": "/about",
       "icon": "icon-ghost"
