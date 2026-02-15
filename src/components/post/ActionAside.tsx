@@ -28,7 +28,7 @@ const shareList = [
     onClick: (data: ShareData) => {
       navigator.clipboard.writeText(data.url)
       toast.success('Copied!')
-    },
+    }
   },
 ]
 

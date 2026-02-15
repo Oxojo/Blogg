@@ -1,27 +1,3 @@
-// Get relative time between two dates
-export function getRelativeTime(startDate: Date, endDate = new Date()) {
-  const diffSeconds = Math.floor((endDate.getTime() - startDate.getTime()) / 1000)
-  if (diffSeconds < 0) {
-    return null
-  }
-  const diffMinutes = Math.floor(diffSeconds / 60)
-  if (diffMinutes < 10) {
-    return 'Right now'
-  }
-  if (diffMinutes < 60) {
-    return `${diffMinutes} Few minites ago`
-  }
-  const diffHours = Math.floor(diffMinutes / 60)
-  if (diffHours < 24) {
-    return `${diffHours} Few hours ago`
-  }
-  const diffDays = Math.floor(diffHours / 24)
-  if (diffDays < 10) {
-    return `${diffDays} Few days ago`
-  }
-  return null
-}
-
 export function getFormattedDate(date: Date) {
   const year = date.getFullYear()
   const month = date.getMonth() + 1

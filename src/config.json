@@ -5,8 +5,7 @@
     "description": "Oxojo's portal site.",
     "keywords": "Gyoza,blog,Astro,theme,Oxojo",
     "lang": "en, jp",
-    "favicon": "/favicon.ico",
-    "appleTouchIcon": "/apple-touch-icon.png"
+    "favicon": "/favicon.ico"
   },
   "author": {
     "name": "Oxojo",
@@ -27,6 +26,12 @@
         "icon": "icon-x",
         "url": "https://twitter.com/Oxojo_",
         "color": "rgb(36, 46, 54)"
+      },
+      {
+        "name": "traP",
+        "icon": "icon-trap",
+        "url": "https://trap.jp/author/Oxojo",
+        "color": "rgb(24, 23, 23)"
       }
     ],
     "yiyan": "Scroll down to see my latest articles."
