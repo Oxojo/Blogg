@@ -79,9 +79,6 @@
     "umami": {
       "serverUrl": "",
       "websiteId": ""
-    },
-    "microsoftClarity": {
-      "projectId": ""
     }
   }
 }

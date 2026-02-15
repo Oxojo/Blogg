@@ -9,8 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "prettier --write .",
-    "new-post": "node scripts/new-post.js",
-    "new-project": "node scripts/new-project.js"
+    "new-post": "node scripts/new-post.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
