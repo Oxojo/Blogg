@@ -16,7 +16,7 @@ tags:
 
 ## 問題リンク
 
-https://atcoder.jp/contests/KeioPC2025/tasks/KeioPC2025_e
+[Link](https://atcoder.jp/contests/KeioPC2025/tasks/KeioPC2025_e)
 
 # 解法
 
@@ -44,12 +44,12 @@ $x = 10, 20, ..., 90$ の時に実際に足されるのは $1, 2, ..., 9$ であ
 よって、この時の答えは
 
 $$
-S(m, 2) - \sum_{k = 0}^1 (10^m - 1) S(m, k) = S(m, 2) - (10^m - 1) \sum_{k = 0}^1 S(m, k)
+S(m, 2) - \sum_{k = 0}^1 (10^m - 1) S(m, k)
 $$
 
 ## 結論 (一般解)
 
-以上より、求める答えは $S(m, n) - (10^m - 1) \sum_{k = 0}^{n - 1} S(m, k)$ である。以降、$\sum_{k=0}^{n-1} S(m, k)$ を高速に求める方法を考える。
+以上を少し式変形することにより、求める答えは $S(m, n) - (10^m - 1) \sum_{k = 0}^{n - 1} S(m, k)$ であるとわかる。以降、$\sum_{k=0}^{n-1} S(m, k)$ を高速に求める方法を考える。
 
 $$
 S(m, n) = \cfrac{1}{m + 1} \sum_{k=0}^{m} \binom{m + 1}{k} B_k (10^n)^{m + 1 - k}
