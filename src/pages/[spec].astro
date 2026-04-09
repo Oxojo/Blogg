@@ -7,6 +7,7 @@ import PageLayout from '@/layouts/PageLayout.astro'
 import Highlight from '@/components/Highlight.astro'
 import SectionBlock from '@/components/SectionBlock.astro'
 import MarkdownWrapper from '@/components/MarkdownWrapper.astro'
+import AboutPage from '@/components/spec/AboutPage.astro'
 import { ReadingProgress } from '@/components/post/ReadingProgress'
 import { PostToc } from '@/components/post/PostToc'
 
@@ -27,14 +28,18 @@ interface Props {
 
 const { md } = Astro.props
 
-const { headings, Content } = await md.render()
-
 const isPageLayout = ['projects'].includes(md.slug)
 const isMdContentEmpty = md.body.trim().length === 0
+const isAboutPage = md.slug === 'about'
+const { headings, Content } = await md.render()
 ---
 
 {
-  isPageLayout ? (
+  isAboutPage ? (
+    <PageLayout title={md.data.title} description={md.data.description}>
+      <AboutPage title={md.data.title} description={md.data.description} />
+    </PageLayout>
+  ) : isPageLayout ? (
     <PageLayout title={md.data.title} description={md.data.description}>
       <div class="max-w-[800px] mx-auto px-4 py-16 space-y-8" data-pagefind-body>
         <header class="space-y-4">
